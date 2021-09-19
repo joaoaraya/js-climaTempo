@@ -2,20 +2,22 @@ const cidade = document.querySelector('input#cidade');
 const pesquisar = document.querySelector('input#pesquisar');
 const mostrarResultados = document.querySelector('div#resultados');
 
-document.querySelector('div#resultados').style.visibility = 'hidden';
-
+// 2 - Quando a url da API for acessada, executar essa função:
 const showData = (resultado) => {
-    // Alterar dados da pagina vindo do resultado do JSON
+    
+    // Alterar dados no DOM vindo do resultado do JSON
     document.querySelector('#nomeCidade').innerHTML = resultado.name;
     document.querySelector('#temperatura').innerHTML = parseInt(resultado.main.temp);
     document.querySelector('#icone').src = `http://openweathermap.org/img/wn/${resultado.weather[0].icon}.png`;
     document.querySelector('#condicao').innerHTML = resultado.weather[0].description;
-    document.querySelector('#humidade').innerHTML = parseInt(resultado.main.humidity);
+    document.querySelector('#umidade').innerHTML = parseInt(resultado.main.humidity);
     document.querySelector('#vento').innerHTML = parseInt(resultado.wind.speed);
+    
     // Mostrar o resto da pagina (já alterada)
     mostrarResultados.style.visibility = 'visible';
 }
 
+// 1 - Quando clicar no botao pesquisar, executar essa função:
 pesquisar.addEventListener('click', (evento) => {
     
     let cidadeNome = cidade.value; // essa variavel pega o valor da input

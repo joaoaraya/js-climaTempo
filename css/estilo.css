@@ -1,3 +1,16 @@
+body{
+    background-color: rgba(182,201,207,255);
+}
+
 #resultados{
-    visibility: hidden;
+    /*visibility: hidden;*/
+}
+
+#cidade{
+    border:none;
+    width: 150pt;
+    height: 20pt;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    padding: 2pt 14pt;
 }
