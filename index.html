@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilo.css">
+    <title>Clima do Tempo</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <input type="text" id="cidade" placeholder="Procure uma cidade">
+            <input type="button" id ='pesquisar' value="Pesquisar">
+        </div>
+        <div id="resultados">
+            <div><p>Clima em <span id='nomeCidade'>São Paulo</span></p></div>
+            <div><p><span id='temperatura'>22</span>ºC</p></div>
+            <div>
+                <img id='icone' src="http://openweathermap.org/img/wn/10d@2x.png" alt="icone">
+                <span id='condicao'>Pancadas de chuva</span>
+            </div>
+            <div><p>humidade: <span id='humidade'>80</span>%</p></div>
+            <div><p>vento: <span id='vento'>80</span> km/h</p></div>
+        </div>
+    </div>
+
+    <script src="./js/clima.js"></script>
+</body>
+
+</html>
