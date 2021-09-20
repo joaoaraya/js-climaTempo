@@ -1,20 +1,23 @@
 const cidade = document.querySelector('input#cidade');
 const pesquisar = document.querySelector('input#pesquisar');
-const mostrarResultados = document.querySelector('div#resultados');
+const mostrarResultados = document.querySelector('div.resultados');
+const mostrarResultadosBg = document.querySelector('div.resultadosBg');
 
 // 2 - Quando a url da API for acessada, executar essa função:
 const showData = (resultado) => {
     
     // Alterar dados no DOM vindo do resultado do JSON
     document.querySelector('#nomeCidade').innerHTML = resultado.name;
-    document.querySelector('#temperatura').innerHTML = parseInt(resultado.main.temp);
-    document.querySelector('#icone').src = `http://openweathermap.org/img/wn/${resultado.weather[0].icon}.png`;
+    document.querySelector('#temperatura').innerHTML = parseInt(resultado.main.temp) + '<sup><small>ºC</small></sup>';
+    document.querySelector('#icone').src = `https://openweathermap.org/img/wn/${resultado.weather[0].icon}@4x.png`;
+    mostrarResultadosBg.style.background = `url('https://openweathermap.org/img/wn/${resultado.weather[0].icon}@4x.png') no-repeat center`;
     document.querySelector('#condicao').innerHTML = resultado.weather[0].description;
-    document.querySelector('#umidade').innerHTML = parseInt(resultado.main.humidity);
-    document.querySelector('#vento').innerHTML = parseInt(resultado.wind.speed);
+    document.querySelector('#umidade').innerHTML = '<strong>Umidade: </strong>' + parseInt(resultado.main.humidity) + '%';
+    document.querySelector('#vento').innerHTML = '<strong>Vento: </strong>' + parseInt(resultado.wind.speed) + ' km/h';
     
     // Mostrar o resto da pagina (já alterada)
     mostrarResultados.style.visibility = 'visible';
+    mostrarResultadosBg.style.visibility = 'visible';
 }
 
 // 1 - Quando clicar no botao pesquisar, executar essa função:
