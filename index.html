@@ -4,28 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./src/estilo.css">
     <title>Clima do Tempo</title>
 </head>
 
 <body>
     <div class="container">
-        <div class='btnPesquisar'>
-            <input id='cidade' type="text" placeholder="Procure uma cidade">
-            <input id='pesquisar' type="submit" value="Pesquisar" />
+        <div class='barPesquisa'>
+            <input id='pesquisa' type="text" placeholder="Procure uma cidade">
         </div>
-        <div class="resultados">
-            <div class='a1'><p id='nomeCidade'></p></div>
-            <div class='a2'><img id='icone' src="" alt="icone"></div>
-            <div class='a3'><p id='temperatura'></p></div>
-            <div class='a4'><p id='condicao'></p></div>
-            <div class='a5'><p id='umidade'></p></div>
-            <div class='a6'><p id='vento'></p></div>
+        <div class="cartao">
+            <div class='r1'><p id='cidade'></p></div>
+            <div class='r2'><img id='icone' src="" alt="icone"></div>
+            <div class='r3'><p id='temperatura'></p></div>
+            <div class='r4'><p id='condicao'></p></div>
+            <div class='r5'><p id='umidade'></p></div>
+            <div class='r6'><p id='vento'></p></div>
         </div>
-        <div class='resultadosBg'></div>
+        <div class='cartaoBg'></div>
     </div>
 
-    <script src="./js/clima.js"></script>
+    <script src="./src/clima.js"></script>
 </body>
 
 </html>

@@ -1,9 +1,9 @@
 @font-face {
     font-family: "open sans";
-    src: url("../font/openSans.ttf");
+    src: url("../src/fonts/openSans.ttf");
 }
 
-body{
+body {
     margin: 0;
     padding: 15px;
     font-family: 'Open Sans';
@@ -12,47 +12,47 @@ body{
     background-color: rgb(52, 52, 52);
 }
 
-.btnPesquisar{
-    grid-area: btnPesquisar;
+.barPesquisa {
+    grid-area: barPesquisa;
 }
 
-.a1{grid-area: a1;}
-.a2{
-    grid-area: a2; 
+.r1 {grid-area: r1;}
+.r2 {
+    grid-area: r2; 
     align-self: center;
 }
-.a3{grid-area: a3;}
-.a4{grid-area: a4;}
-.a5{grid-area: a5;}
-.a6{grid-area: a6;}
+.r3 {grid-area: r3;}
+.r4 {grid-area: r4;}
+.r5 {grid-area: r5;}
+.r6 {grid-area: r6;}
 
-.resultados, .resultadosBg{
+.cartao, .cartaoBg {
     visibility: hidden;
-    grid-area: resultados;
+    grid-area: cartao;
 }
 
-.resultados{
+.cartao {
     display: grid;
     grid-template-areas:
-        'a1 a1 a1'
-        'a2 a3 a3'
-        'a4 a4 a4'
-        'a5 a5 a5'
-        'a6 a6 a6';
+        'r1 r1 r1'
+        'r2 r3 r3'
+        'r4 r4 r4'
+        'r5 r5 r5'
+        'r6 r6 r6';
 }
 
-.resultadosBg{
+.cartaoBg{
     opacity: 0.5;
     filter: blur(25px);
 }
 
-.resultados, #cidade{
+.cartao, #pesquisa{
     border: none;
     width: 100%;
     height: 100%;
     padding: 25px;
 
-    background: #454545;
+    background: rgb(69, 69, 69);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
 }
@@ -60,18 +60,23 @@ body{
 .container {
     display: grid;
     grid-template-areas:
-        'btnPesquisar'
-        'resultados';
+        'barPesquisa'
+        'cartao';
     grid-template-columns: 400px;
     grid-template-rows: auto;
     grid-gap: 30px;
     justify-content: center;
 }
 
-#cidade{
-    padding: 2px 25px;
+#pesquisa{
+    padding: 8px 25px;
     color: rgb(255, 255, 255);
 }
+
+#pesquisa:focus {
+    outline: none;
+    background-color: rgb(34, 34, 34);
+  }
 
 #icone{
     margin: 0;
@@ -79,13 +84,13 @@ body{
     height: 100px;
 }
 
-#nomeCidade, #temperatura, #condicao, #umidade, #vento{
+#cidade, #temperatura, #condicao, #umidade, #vento{
     margin: 0;
     color: rgb(255, 255, 255);
     text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.18);
 }
 
-#nomeCidade, #condicao{
+#cidade, #condicao{
     text-transform: capitalize;
     font-size: 30px;
 }
@@ -95,6 +100,6 @@ body{
     font-size: 120px;
 }
 
-#cidade, #umidade, #vento{
+#pesquisa, #umidade, #vento{
     font-size: 20px;
 }
